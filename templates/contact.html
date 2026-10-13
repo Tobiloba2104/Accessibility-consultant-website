@@ -1,0 +1,75 @@
+{% extends "base.html" %}
+{% block title %}Contact — Victor Ekwueme{% endblock %}
+{% block content %}
+
+<h1>Contact</h1>
+
+<section class="contact-section">
+    <p>Have a question about an audit, training, or a speaking engagement? Send a message below, or reach Victor directly:</p>
+    <p>
+        Email: <a href="mailto:victor@luponetconsults.com">victor@luponetconsults.com</a><br>
+        <a href="https://www.linkedin.com/in/ogovekwueme">View LinkedIn Profile</a>
+    </p>
+
+    {% if success %}
+        <p class="form-success" role="status">Thanks — your message has been sent. Victor will get back to you soon.</p>
+    {% endif %}
+
+    {% if error %}
+        <p class="form-error" role="alert">{{ error }}</p>
+    {% endif %}
+
+    <form method="POST" action="{{ url_for('contact') }}" novalidate>
+
+        <div class="honeypot" aria-hidden="true">
+            <label for="website">Leave this field blank</label>
+            <input type="text" id="website" name="website" tabindex="-1" autocomplete="off">
+        </div>
+
+        <div class="mb-3">
+            <label for="full_name" class="form-label">Full Name</label>
+            <input type="text" class="form-control" id="full_name" name="full_name" autocomplete="name" required
+                   aria-describedby="full_name_error">
+            {% if errors and errors.full_name %}
+                <span id="full_name_error" class="form-error">{{ errors.full_name }}</span>
+            {% endif %}
+        </div>
+
+        <div class="mb-3">
+            <label for="email" class="form-label">Email Address</label>
+            <input type="email" class="form-control" id="email" name="email" autocomplete="email" required
+                   aria-describedby="email_error">
+            {% if errors and errors.email %}
+                <span id="email_error" class="form-error">{{ errors.email }}</span>
+            {% endif %}
+        </div>
+
+        <div class="mb-3">
+            <label for="subject" class="form-label">Subject</label>
+            <select class="form-select" id="subject" name="subject" required
+                    aria-describedby="subject_error">
+                <option value="">Select a reason for contacting Victor</option>
+                <option value="Accessibility Audit">Accessibility Audit</option>
+                <option value="Training">Training</option>
+                <option value="Public Speaking">Public Speaking</option>
+                <option value="General Inquiry">General Inquiry</option>
+            </select>
+            {% if errors and errors.subject %}
+                <span id="subject_error" class="form-error">{{ errors.subject }}</span>
+            {% endif %}
+        </div>
+
+        <div class="mb-3">
+            <label for="message" class="form-label">Message</label>
+            <textarea class="form-control" id="message" name="message" rows="5" required
+                      aria-describedby="message_error"></textarea>
+            {% if errors and errors.message %}
+                <span id="message_error" class="form-error">{{ errors.message }}</span>
+            {% endif %}
+        </div>
+
+        <button type="submit" class="btn btn-primary">Send Message</button>
+    </form>
+</section>
+
+{% endblock %}

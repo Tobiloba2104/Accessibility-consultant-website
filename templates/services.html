@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+{% block title %}Services — Victor Ekwueme{% endblock %}
+{% block content %}
+
+<h1>Services</h1>
+<p class="services-intro">Victor offers three core  services to help organizations and individuals improve digital accessibility.</p>
+
+<div class="row g-4">
+  <div class="col-12 col-md-4">
+    <section class="web-access service-card">
+      <h2>Web Accessibility</h2>
+      <p>Victor evaluates websites and digital products against WCAG standards.</p>
+      <p>He identifies barriers for users with disabilities and provides remediation guidance.</p>
+      <a href="{{ url_for('contact') }}" class="btn btn-primary">Request an audit with Victor</a>
+    </section>
+  </div>
+
+  <div class="col-12 col-md-4">
+    <section class="training service-card">
+      <h2>Accessibility Training</h2>
+      <p>Victor offers training sessions for teams on web accessibility best practices.</p>
+      <p>He delivers accessibility training for developers, designers, and organizations, covering standards, assistive technology, and inclusive design practice.</p>
+      <a href="{{ url_for('contact') }}" class="btn btn-primary">Schedule a training session with Victor</a>
+    </section>
+  </div>
+
+  <div class="col-12 col-md-4">
+    <section class="public service-card">
+      <h2>Public Speaking</h2>
+      <p>Victor speaks publicly on digital accessibility topics.</p>
+      <p>He also speaks about inclusive design and disability inclusion for conferences, webinars, and organizational events.</p>
+      <a href="{{ url_for('contact') }}" class="btn btn-primary">Book Victor to Speak</a>
+    </section>
+  </div>
+</div>
+
+{% endblock %}

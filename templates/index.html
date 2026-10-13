@@ -1,0 +1,42 @@
+ {% extends "base.html" %}
+ {% block content %}
+
+ <section class="hero py-4">
+  <div class="row align-items-center">
+    <div class="col-12 col-md-7 text-center text-md-start order-2 order-md-1">
+      <h1>Victor Ekwueme</h1>
+      <p class="job-title">Accessibility Consultant, CTO of Luponet Consults Ltd, IT Consultant.</p>
+      <p class="strapline">If you build for persons with disabilities, you build for all</p>
+    </div>
+    <div class="col-12 col-md-5 text-center order-1 order-md-2">
+      <img src="{{ url_for('static', filename='images/victor.webp') }}" 
+           alt="Victor Ekwueme, accessibility consultant" 
+           class="rounded-circle img-fluid" style="max-width: 280px;">
+    </div>
+  </div>
+</section>
+
+<section class="bio">
+    <h2>About Victor</h2>
+    <p>For over two decades, Victor Ekwueme has been building software, but somewhere along the way, the question stopped being just "does it work?" and became "does it work for everyone?" That shift now defines his career.</p>
+    <p>As CTO of Luponet Consults Ltd, Victor leads an IT consultancy built around two distinct but connected practices: helping organizations implement and train on Odoo ERP systems, and closer to his heart, auditing, remediating, and training teams on web accessibility. It's a rare combination, someone who understands both how software gets built and why so much of it quietly excludes the people who need it most.</p>
+    <p>That commitment reaches beyond client work. As Disability Inclusion Advisor at JONAPWD, a Nigerian NGO partnered with the Mastercard Foundation and Light for the World, Victor contributes to disability-inclusion programming that has been replicated across several African countries work grounded not in theory, but in expanding what accessible technology actually looks like on the continent.</p>
+    <p>His credentials back up the expertise: Victor holds CPACC certification and is an NVDA Expert, and is a member of the International Association of Accessibility Professionals (IAAP) recognized standards in a field where genuine expertise is still rare. His academic ties extend to the University of Nottingham and the University of Dundee in the UK, connecting his practical consulting work to ongoing research and academic rigor in the field.</p>
+    <p>Based in Nigeria, Victor works with organizations and individuals who share one core belief, the same one that shapes everything on this site:</p>
+    <p class="strapline">If you build for persons with disabilities, you build for all.</p>
+    <p>Victor is also the author of a book on digital accessibility, available through the following platforms:</p>
+    <ul>
+    <li><a href="https://bit.ly/Gumroad_TVPD">Get the book on Gumroad</a></li>
+    <li><a href="https://bit.ly/Selar_TVPD">Get the book on Selar</a></li>
+    </ul>
+    <a href="https://www.linkedin.com/in/ogovekwueme">View LinkedIn Profile</a>
+</section>
+
+ <section class="cta">
+            <h2>Next Steps</h2>
+            <a href="{{url_for ('services')}}" class="btn btn-primary">Explore his Services</a>
+            <a href="{{url_for ('contact')}}" class="btn btn-secondary">Get in touch</a>
+ </section>
+
+
+    {% endblock %}
